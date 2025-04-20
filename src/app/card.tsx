@@ -20,12 +20,12 @@ export default function Card() {
     });
   
     return (
-        <div className="col-span-full grid grid-cols-1 sm:grid-cols-2 sm:max-w-lg w-8/10 m-auto bg-white shadow-sm rounded-lg">
+        <div className="col-span-full grid grid-cols-1 sm:grid-cols-2 sm:max-w-xl w-8/10 m-auto bg-white shadow-sm rounded-lg">
             <div>
                 <img
-                src={ isMobile ? '/image-mobile.jpg' : '/image-desktop.jpg' } 
-                alt="Gabrielle Esence Eau de Parfum"
-                className='size-full object-cover rounded-t-lg sm:rounded-l-lg sm:rounded-r-none'
+                    src={ isMobile ? '/image-mobile.jpg' : '/image-desktop.jpg' } 
+                    alt="Gabrielle Esence Eau de Parfum"
+                    className='size-full object-cover rounded-t-lg sm:rounded-l-lg sm:rounded-r-none'
                 />
             </div>
             <div className="p-5 flex flex-col justify-center gap-2.5 sm:gap-0 sm:justify-around">
@@ -43,7 +43,7 @@ export default function Card() {
                 Gabrielle Essence Eau De Parfum
                 </h1>
                 <p className={cn(
-                    'text-xs text-pretty text-foreground-dimmed',
+                    'text-xs text-pretty leading-5 text-foreground-dimmed',
                     montserrat.className
                 )}
                 >
@@ -68,8 +68,11 @@ export default function Card() {
                     'hover:cursor-pointer'
                 )}
                 >
-                <img src='/icon-cart.svg'/>
-                <div className='font-extrabold'>Add to Cart</div>
+                <img 
+                    src='/icon-cart.svg' 
+                    alt='cart icon'
+                />
+                <span className='font-extrabold'>Add to Cart</span>
                 </button>
             </div>
             </div>
