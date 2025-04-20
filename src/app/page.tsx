@@ -1,10 +1,13 @@
+import NoSSR from '@/lib/no-ssr';
 import Card from './card';
 
 export default function Home() {
   return (
     <>
       <main className="h-screen grid grid-cols-1 place-content-center">
-        <Card />
+        <NoSSR>
+          <Card />
+        </NoSSR>
       </main>
       {/* <footer className="flex-none">
         <div className="attribution">

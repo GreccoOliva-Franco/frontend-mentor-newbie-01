@@ -3,7 +3,6 @@
 import 'client-only';
 
 import { cn } from "@/lib/utils";
-import NoSSR from 'next-no-ssr';
 import { useState, useEffect } from "react";
 import { Montserrat, Fraunces } from 'next/font/google'
 
@@ -21,8 +20,7 @@ export default function Card() {
     });
   
     return (
-        <NoSSR>
-            <div className="col-span-full grid grid-cols-1 sm:grid-cols-2 sm:max-w-lg w-8/10 m-auto bg-white shadow-sm rounded-lg">
+        <div className="col-span-full grid grid-cols-1 sm:grid-cols-2 sm:max-w-lg w-8/10 m-auto bg-white shadow-sm rounded-lg">
             <div>
                 <img
                 src={ isMobile ? '/image-mobile.jpg' : '/image-desktop.jpg' } 
@@ -75,6 +73,5 @@ export default function Card() {
                 </button>
             </div>
             </div>
-        </NoSSR>
     );
   }

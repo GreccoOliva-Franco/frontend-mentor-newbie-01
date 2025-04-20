@@ -1,13 +1,20 @@
-import { ReactNode } from "react";
+'use client'
+
+import 'client-only'
+import { ReactNode, useEffect, useState } from 'react';
 
 export default function NoSSR({ 
     children
-}: Readonly<{
+} : Readonly<{
     children: ReactNode
 }>) {
-    const isServer = () => typeof window === 'undefined';
+    const [shouldRender, setShouldRender] = useState(false);
 
-    return isServer()
-        ? null
-        : (<>{ children }</>)
-}
+    useEffect(() => {
+        setShouldRender(true);
+    }, []);
+
+    return shouldRender 
+        ? children 
+        : null;
+};
