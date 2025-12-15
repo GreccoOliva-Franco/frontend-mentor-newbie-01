@@ -5,6 +5,7 @@ import 'client-only';
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import { Montserrat, Fraunces } from 'next/font/google'
+import Image from 'next/image';
 
 
 const montserrat = Montserrat({ subsets: ['latin'] })
@@ -22,7 +23,7 @@ export default function Card() {
     return (
         <div className="col-span-full grid grid-cols-1 sm:grid-cols-2 sm:max-w-xl w-8/10 m-auto bg-white shadow-sm rounded-lg">
             <div>
-                <img
+                <Image
                     src={ isMobile ? '/image-mobile.jpg' : '/image-desktop.jpg' } 
                     alt="Gabrielle Esence Eau de Parfum"
                     className='size-full object-cover rounded-t-lg sm:rounded-l-lg sm:rounded-r-none'
@@ -68,7 +69,7 @@ export default function Card() {
                     'hover:cursor-pointer'
                 )}
                 >
-                <img 
+                <Image 
                     src='/icon-cart.svg' 
                     alt='cart icon'
                 />
